@@ -14,7 +14,7 @@ function showToast(msg) {
 }
 
 function copyCoupon(code, btn) {
-  const open = () => window.open('https://me2disk.com/', '_blank', 'noopener');
+  window.open('https://me2disk.com/', '_blank', 'noopener');
   const onSuccess = () => {
     showToast('쿠폰 코드가 복사되었습니다. 등록 페이지로 이동합니다.');
     if (btn) {
@@ -23,7 +23,6 @@ function copyCoupon(code, btn) {
       btn.classList.add('copied');
       setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1800);
     }
-    open();
   };
 
   if (navigator.clipboard && window.isSecureContext) {
